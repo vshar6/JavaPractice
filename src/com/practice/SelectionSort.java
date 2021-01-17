@@ -1,4 +1,4 @@
-package com.walmart;
+
 
 public class SelectionSort {
     private static int[] selectionSort(int [] args) {
@@ -14,9 +14,9 @@ public class SelectionSort {
             }
             //System.out.println("Smallest:"+smallest);
             System.out.println("Index of smallest:" + indexOfSmallest);
-            SumTwo.swapElements(args, i, indexOfSmallest);
+            Practice.swapElements(args, i, indexOfSmallest);
 
-            SumTwo.printArray(args);
+            Practice.printArray(args);
 
         }
         // printArray(args);

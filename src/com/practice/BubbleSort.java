@@ -1,4 +1,4 @@
-package com.walmart;
+
 
 public class BubbleSort {
 
@@ -7,11 +7,11 @@ public class BubbleSort {
         for(int i=0;i<lengthOfArgs-1; i++) {
             for(int j=1;j<lengthOfArgs-i;j++) {
                 if(args[j]<args[j-1]) {
-                    SumTwo.swapElements(args, j, j-1);
+                    Practice.swapElements(args, j, j-1);
                 }
             }
         }
-        SumTwo.printArray(args);
+        Practice.printArray(args);
 
         return args;
 

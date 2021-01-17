@@ -1,4 +1,4 @@
-package com.walmart;
+
 
 public class MergeSort {
     public static void mergeSort(int[] array) {
@@ -50,6 +50,6 @@ public class MergeSort {
             }
         }
 
-        SumTwo.printArray(array);
+        Practice.printArray(array);
     }
 }

@@ -1,6 +1,3 @@
-package com.walmart;
-
-import java.math.BigInteger;
 
 public class AdditiveNumber {
 

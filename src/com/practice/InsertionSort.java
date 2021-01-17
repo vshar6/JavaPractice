@@ -1,4 +1,4 @@
-package com.walmart;
+
 
 public class InsertionSort {
 
@@ -14,7 +14,7 @@ public class InsertionSort {
             }
             args[i+1] = key;
         }
-        SumTwo.printArray(args);
+        Practice.printArray(args);
         return args;
     }
 }

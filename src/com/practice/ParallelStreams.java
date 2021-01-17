@@ -1,4 +1,4 @@
-package com.walmart;
+
 
 import java.util.function.Function;
 import java.util.stream.LongStream;

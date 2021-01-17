@@ -1,5 +1,3 @@
-package com.walmart;
-
 public class QuickSort {
 
     protected void quickSort(int[] array, int begin, int end) {
@@ -31,7 +29,7 @@ public class QuickSort {
         arr[i+1] = arr[end];
         arr[end] = swapTemp;
 
-        SumTwo.printArray(arr);
+        Practice.printArray(arr);
         return i+1;
     }
 }

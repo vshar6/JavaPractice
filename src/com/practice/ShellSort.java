@@ -1,4 +1,4 @@
-package com.walmart;
+
 
 public class ShellSort {
 
@@ -21,7 +21,7 @@ public class ShellSort {
             // reduce interval
             interval = (interval - 1)/3;
         }
-        SumTwo.printArray(arr);
+        Practice.printArray(arr);
         return arr;
     }
 
