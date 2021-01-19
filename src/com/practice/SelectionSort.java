@@ -19,9 +19,6 @@ public class SelectionSort {
             Practice.printArray(args);
 
         }
-        // printArray(args);
-
-        //System.out.println(smallest);
         return args;
     }
 }
