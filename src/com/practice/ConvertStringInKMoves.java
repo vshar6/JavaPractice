@@ -36,9 +36,11 @@ public class ConvertStringInKMoves {
         return true;
     }
 
+
+
     /*a-t=-19;t-v=-2;m-b=11;x-j=14;z-h=18;j-v=-12;k-j=1;z-d=22*/
     public static void main(String [] args) {
-        System.out.println(canConvertString("jicfxaa","ocxltbp",15));
-        System.out.println('m'-'b');
+       System.out.println(canConvertString("jicfxaa","ocxltbp",15));
+        //System.out.println(generateTheString(22));
     }
 }
