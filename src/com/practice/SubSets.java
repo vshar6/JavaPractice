@@ -1,8 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-
+import java.util.*;
 
 
 // https://leetcode.com/problems/subsets/
@@ -12,11 +8,12 @@ public class SubSets {
 
         //SubSets soa= new SubSets();
         int[] nums= {1, 2, 3};
-        List<List<Integer>> subsets = subsets(nums);
-
-        for (List<Integer> subset: subsets) {
-            System.out.println(subset);
-        }
+        System.out.println(powerSet(new HashSet<>(){{add(1);add(2);add(3);}}));
+//        List<List<Integer>> subsets = subsets(nums);
+//
+//        for (List<Integer> subset: subsets) {
+//            System.out.println(subset);
+//        }
     }
 
     public static List<List<Integer>> subsets(int[] nums) {
@@ -35,5 +32,24 @@ public class SubSets {
             // remove
             resultList.remove(resultList.size() - 1);
         }
+    }
+
+    public static Set<Set<Integer>> powerSet(Set<Integer> originalSet) {
+        Set<Set<Integer>> sets = new HashSet<Set<Integer>>();
+        if (originalSet.isEmpty()) {
+            sets.add(new HashSet<Integer>());
+            return sets;
+        }
+        List<Integer> list = new ArrayList<Integer>(originalSet);
+        Integer head = list.get(0);
+        Set<Integer> rest = new HashSet<Integer>(list.subList(1, list.size()));
+        for (Set<Integer> set : powerSet(rest)) {
+            Set<Integer> newSet = new HashSet<Integer>();
+            newSet.add(head);
+            newSet.addAll(set);
+            sets.add(newSet);
+            sets.add(set);
+        }
+        return sets;
     }
 }
