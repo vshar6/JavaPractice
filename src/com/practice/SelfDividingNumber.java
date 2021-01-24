@@ -12,7 +12,7 @@ import java.util.List;
 
 public class SelfDividingNumber {
    static  List<Integer> selfDividingNumbers = new ArrayList<>();
-    public static List<Integer> selfDividingNumbers(int left, int right) {
+    public static List<Integer> getSelfDividingNumbers(int left, int right) {
 
         if(left > right) {
             return selfDividingNumbers;
@@ -33,12 +33,12 @@ public class SelfDividingNumber {
                 }
             }
             left++;
-            return selfDividingNumbers(left,right);
+            return getSelfDividingNumbers(left,right);
         }
 
     }
 
     public static void main(String [] args) {
-       System.out.println(selfDividingNumbers(47,85));
+       System.out.println(getSelfDividingNumbers(47,85));
     }
 }
