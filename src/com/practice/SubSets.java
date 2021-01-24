@@ -8,8 +8,8 @@ public class SubSets {
 
         //SubSets soa= new SubSets();
         int[] nums= {1, 2, 3};
-        System.out.println(powerSet(new HashSet<>(){{add(1);add(2);add(3);}}));
-//        List<List<Integer>> subsets = subsets(nums);
+        //System.out.println(powerSet(new HashSet<>(){{add(1);add(2);add(3);}}));
+       List<List<Integer>> subsets = subsets(nums);
 //
 //        for (List<Integer> subset: subsets) {
 //            System.out.println(subset);
@@ -22,19 +22,19 @@ public class SubSets {
         return list;
     }
 
-    private static void subsetsHelper(List<List<Integer>> list , List<Integer> resultList, int [] nums, int start){
-        list.add(new ArrayList<>(resultList));
+    private static void subsetsHelper(List<List<Integer>> subsets , List<Integer> currentSubset, int [] nums, int start){
+        subsets.add(new ArrayList<>(currentSubset));
         for(int i = start; i < nums.length; i++){
             // add element
-            resultList.add(nums[i]);
+            currentSubset.add(nums[i]);
             // Explore
-            subsetsHelper(list, resultList, nums, i + 1);
+            subsetsHelper(subsets, currentSubset, nums, i + 1);
             // remove
-            resultList.remove(resultList.size() - 1);
+            currentSubset .remove(currentSubset.size() - 1);
         }
     }
 
-    public static Set<Set<Integer>> powerSet(Set<Integer> originalSet) {
+    /*public static Set<Set<Integer>> powerSet(Set<Integer> originalSet) {
         Set<Set<Integer>> sets = new HashSet<Set<Integer>>();
         if (originalSet.isEmpty()) {
             sets.add(new HashSet<Integer>());
@@ -51,5 +51,5 @@ public class SubSets {
             sets.add(set);
         }
         return sets;
-    }
+    }*/
 }
