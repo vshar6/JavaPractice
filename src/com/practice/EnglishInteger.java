@@ -49,8 +49,6 @@ public EnglishInteger() {
     tensEnglish.put("18","Eighteen");
     tensEnglish.put("19","Nineteen");
 
-
-    //hundredsEnglish.put('0',"");
     hundredsEnglish.put('1',"One Hundred");
     hundredsEnglish.put('2',"Two Hundred");
     hundredsEnglish.put('3',"Three Hundred");
@@ -140,7 +138,7 @@ public EnglishInteger() {
             } else {
                 String tensValue = digitValue.substring(0,1);
                 if(!tensValue.equals("0")) {
-                    accumulator.append(tensEnglish.get(tensValue).trim()).append(" ");
+                    accumulator.append(tensEnglish.get(tensValue)).append(" ");
                 }
                 char unitValue = digitValue.toCharArray()[1];
                 if(unitValue != '0') {
