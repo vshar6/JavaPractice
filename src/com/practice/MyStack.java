@@ -11,6 +11,7 @@ public class MyStack<T> {
         public StackNode(T item) {
             this.data=item;
         }
+
     }
 
     private StackNode<T> top;
