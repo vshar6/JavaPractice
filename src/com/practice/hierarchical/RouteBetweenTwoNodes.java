@@ -13,11 +13,8 @@ public class RouteBetweenTwoNodes {
         }
 
         start.setNodeState(State.VISITNG);
-
         nodes.add(start);
-
         Node u;
-
         while(!nodes.isEmpty()) {
             u = nodes.removeFirst();
 
@@ -35,10 +32,6 @@ public class RouteBetweenTwoNodes {
             }
         }
         return false;
-    }
-
-    public static void main(String [] args) {
-
     }
 
 }
