@@ -1,4 +1,4 @@
-
+package hierarchical;
 
 // https://leetcode.com/problems/invert-binary-tree/
 public class InvertBinaryTree {

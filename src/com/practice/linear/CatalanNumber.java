@@ -1,3 +1,5 @@
+package linear;
+
 public class CatalanNumber {
 
     public static int catalan(int n) {

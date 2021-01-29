@@ -1,6 +1,4 @@
-
-
-import org.w3c.dom.Node;
+package linear;
 
 public class MyStack<T> {
 

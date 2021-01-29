@@ -1,4 +1,4 @@
-
+package linear;
 /* https://www.educative.io/m/largest-sum-subarray */
 
 public class KadaneAlgorithm {

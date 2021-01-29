@@ -1,3 +1,5 @@
+package hierarchical;
+
 public class Node {
 
     public String name;

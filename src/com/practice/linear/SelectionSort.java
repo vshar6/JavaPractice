@@ -1,4 +1,4 @@
-
+package linear;
 
 public class SelectionSort {
     private static int[] selectionSort(int [] args) {

@@ -1,4 +1,4 @@
-
+package hierarchical;
 
 //https://www.educative.io/m/check-if-two-binary-trees-are-identical
 

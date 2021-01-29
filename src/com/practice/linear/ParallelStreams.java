@@ -1,4 +1,4 @@
-
+package linear;
 
 import java.util.function.Function;
 import java.util.stream.LongStream;

@@ -1,3 +1,5 @@
+package hierarchical;
+
 public class Graph {
 
     public Node[] nodes;

@@ -1,3 +1,5 @@
+package linear;
+
 import java.util.*;
 
 
@@ -6,7 +8,7 @@ public class SubSets {
 
     public static void main(String[] args) {
 
-        //SubSets soa= new SubSets();
+        //array.SubSets soa= new array.SubSets();
         int[] nums= {1, 2, 3};
         //System.out.println(powerSet(new HashSet<>(){{add(1);add(2);add(3);}}));
        List<List<Integer>> subsets = subsets(nums);

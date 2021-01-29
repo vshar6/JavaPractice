@@ -1,7 +1,4 @@
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
-
+package linear;
 
 
 // https://leetcode.com/problems/final-prices-with-a-special-discount-in-a-shop/
@@ -34,7 +31,7 @@ public class FinalPrices {
             }
             counter++;
         }
-        //Practice.printArray(prices);
+        //array.Practice.printArray(prices);
 
 
         Practice.printArray(prices);

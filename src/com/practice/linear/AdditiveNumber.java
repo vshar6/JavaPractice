@@ -1,3 +1,4 @@
+package linear;
 
 public class AdditiveNumber {
 

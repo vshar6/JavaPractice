@@ -1,4 +1,4 @@
-
+package linear;
 
 public class ShellSort {
 

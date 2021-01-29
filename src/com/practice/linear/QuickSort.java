@@ -1,3 +1,5 @@
+package linear;
+
 public class QuickSort {
 
     protected void quickSort(int[] array, int begin, int end) {

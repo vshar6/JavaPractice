@@ -1,3 +1,4 @@
+package linear;
 
 /*
  *  https://leetcode.com/problems/sort-array-by-parity/

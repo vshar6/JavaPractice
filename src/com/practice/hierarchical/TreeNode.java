@@ -1,4 +1,4 @@
-import com.sun.source.tree.Tree;
+package hierarchical;
 
 public class TreeNode {
 

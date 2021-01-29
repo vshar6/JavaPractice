@@ -1,4 +1,4 @@
-
+package linear;
 
 public class MergeSort {
     public static void mergeSort(int[] array) {

@@ -1,4 +1,4 @@
-
+package linear;
 
 /* https://leetcode.com/problems/generate-a-string-with-characters-that-have-odd-counts/
 int n = length of the string

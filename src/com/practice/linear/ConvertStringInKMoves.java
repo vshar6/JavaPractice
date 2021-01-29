@@ -1,3 +1,5 @@
+package linear;
+
 import java.util.*;
 
 /* https://leetcode.com/problems/can-convert-string-in-k-moves/ */
