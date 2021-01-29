@@ -200,20 +200,7 @@ public class Practice {
     }
 
     public static int lengthOfLastWord(String s) {
-//        if(s.trim().length()==0) {
-//            return 0;
-//        }
-        //String[] words = s.split(" ");
-        //System.out.println("words.length"+words.length+":");
         return s.trim().length() == 0 || s.split(" ").length == 0 ? 0 : s.split(" ")[s.split(" ").length - 1].length();
-//        List<String> words = Arrays.asList(s.split(" "));
-//        if(words.size()>0) {
-//            String lastWord = words.get(words.size()-1);
-//            return lastWord.length();
-//        } else {
-//            return 0;
-//        }
-
     }
 
     public static String thousandSeparator(int n) {
