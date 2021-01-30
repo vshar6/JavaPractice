@@ -1,8 +1,5 @@
 package hierarchical;
 
-import com.sun.source.tree.Tree;
-
-
 /* https://leetcode.com/problems/inorder-successor-in-bst/ */
 public class BSTSuccessor {
 
