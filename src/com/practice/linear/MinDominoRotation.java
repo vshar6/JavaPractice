@@ -2,6 +2,7 @@ package linear;
 
 
 /* https://leetcode.com/problems/minimum-domino-rotations-for-equal-row/ */
+
 public class MinDominoRotation {
 
     public int minDominoRotations(int[] A, int[] B) {
@@ -28,7 +29,6 @@ public class MinDominoRotation {
 
     public static void main(String [] args) {
         int [] A = {2,1,2,4,2,2}, B = {5,2,6,2,3,2};
-
         MinDominoRotation dominoRotation = new MinDominoRotation();
         dominoRotation.minDominoRotations(A, B);
     }
