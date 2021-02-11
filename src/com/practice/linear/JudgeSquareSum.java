@@ -25,7 +25,5 @@ public class JudgeSquareSum {
     public static void main(String []  args) {
         JudgeSquareSum judgeSquareSum = new JudgeSquareSum();
         System.out.println(judgeSquareSum.judgeSquareSum(1000));
-
-       // System.out.println(interator);
     }
 }
