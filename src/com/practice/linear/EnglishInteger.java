@@ -8,7 +8,7 @@ import java.util.TreeMap;
 
 /*
 * The program converts Integer to its english representation
-* https://leetcode.com/problems/integer-to-english-words/submissions/
+* https://leetcode.com/problems/integer-to-english-words/
 * */
 
 public class EnglishInteger {
@@ -19,81 +19,74 @@ public class EnglishInteger {
     Map<Character, String> hundredsEnglish = new HashMap<>();
     Map<Integer, String> digitsInBracket = new TreeMap<>(Collections.reverseOrder());
 
-public EnglishInteger() {
-    unitEnglish.put('1',"One");
-    unitEnglish.put('2',"Two");
-    unitEnglish.put('3',"Three");
-    unitEnglish.put('4',"Four");
-    unitEnglish.put('5',"Five");
-    unitEnglish.put('6',"Six");
-    unitEnglish.put('7',"Seven");
-    unitEnglish.put('8',"Eight");
-    unitEnglish.put('9',"Nine");
-    unitEnglish.put('0',"Ten");
+    public EnglishInteger() {
+        unitEnglish.put('1',"One");
+        unitEnglish.put('2',"Two");
+        unitEnglish.put('3',"Three");
+        unitEnglish.put('4',"Four");
+        unitEnglish.put('5',"Five");
+        unitEnglish.put('6',"Six");
+        unitEnglish.put('7',"Seven");
+        unitEnglish.put('8',"Eight");
+        unitEnglish.put('9',"Nine");
+        unitEnglish.put('0',"Ten");
 
-    //tensEnglish.put("0","");
-    tensEnglish.put("2","Twenty");
-    tensEnglish.put("3","Thirty");
-    tensEnglish.put("4","Forty");
-    tensEnglish.put("5","Fifty");
-    tensEnglish.put("6","Sixty");
-    tensEnglish.put("7","Seventy");
-    tensEnglish.put("8","Eighty");
-    tensEnglish.put("9","Ninety");
-    tensEnglish.put("10","Ten");
-    tensEnglish.put("11","Eleven");
-    tensEnglish.put("12","Twelve");
-    tensEnglish.put("13","Thirteen");
-    tensEnglish.put("14","Fourteen");
-    tensEnglish.put("15","Fifteen");
-    tensEnglish.put("16","Sixteen");
-    tensEnglish.put("17","Seventeen");
-    tensEnglish.put("18","Eighteen");
-    tensEnglish.put("19","Nineteen");
+        //tensEnglish.put("0","");
+        tensEnglish.put("2","Twenty");
+        tensEnglish.put("3","Thirty");
+        tensEnglish.put("4","Forty");
+        tensEnglish.put("5","Fifty");
+        tensEnglish.put("6","Sixty");
+        tensEnglish.put("7","Seventy");
+        tensEnglish.put("8","Eighty");
+        tensEnglish.put("9","Ninety");
+        tensEnglish.put("10","Ten");
+        tensEnglish.put("11","Eleven");
+        tensEnglish.put("12","Twelve");
+        tensEnglish.put("13","Thirteen");
+        tensEnglish.put("14","Fourteen");
+        tensEnglish.put("15","Fifteen");
+        tensEnglish.put("16","Sixteen");
+        tensEnglish.put("17","Seventeen");
+        tensEnglish.put("18","Eighteen");
+        tensEnglish.put("19","Nineteen");
 
-    hundredsEnglish.put('1',"One Hundred");
-    hundredsEnglish.put('2',"Two Hundred");
-    hundredsEnglish.put('3',"Three Hundred");
-    hundredsEnglish.put('4',"Four Hundred");
-    hundredsEnglish.put('5',"Five Hundred");
-    hundredsEnglish.put('6',"Six Hundred");
-    hundredsEnglish.put('7',"Seven Hundred");
-    hundredsEnglish.put('8',"Eight Hundred");
-    hundredsEnglish.put('9',"Nine Hundred");
-
-
-}
-
-
-    private  String englishValue(String value) {
-
-
-        populateBracketMap(value,0);
-
-        System.out.println(digitsInBracket);
-        String englishPlaceValue = valueOfNumberInEnglish(digitsInBracket);
-        return englishPlaceValue;
-
-    }
-
-    private String numberToWords(int num) {
-    if(num==0) {
-        return "Zero";
-    }
-        populateBracketMap(String.valueOf(num),0);
-
-        System.out.println(digitsInBracket);
-        String englishPlaceValue = valueOfNumberInEnglish(digitsInBracket).trim();
-        return englishPlaceValue.trim();
+        hundredsEnglish.put('1',"One Hundred");
+        hundredsEnglish.put('2',"Two Hundred");
+        hundredsEnglish.put('3',"Three Hundred");
+        hundredsEnglish.put('4',"Four Hundred");
+        hundredsEnglish.put('5',"Five Hundred");
+        hundredsEnglish.put('6',"Six Hundred");
+        hundredsEnglish.put('7',"Seven Hundred");
+        hundredsEnglish.put('8',"Eight Hundred");
+        hundredsEnglish.put('9',"Nine Hundred");
     }
 
     public static void main(String [] args) {
-        String value = new String("1,000,000,000");
+        String value = "1,000,000,002";
         EnglishInteger e = new EnglishInteger();
 
-       // e.numberToWords(1000000000);
+        // e.numberToWords(1000000000);
         e.englishValue(value.replaceAll(",",""));
     }
+
+    private  String englishValue(String value) {
+        populateBracketMap(value,0);
+        System.out.println(digitsInBracket);
+        String englishPlaceValue = valueOfNumberInEnglish(digitsInBracket);
+        return englishPlaceValue;
+    }
+
+//    private String numberToWords(int num) {
+//    if(num==0) {
+//        return "Zero";
+//    }
+//        populateBracketMap(String.valueOf(num),0);
+//
+//        System.out.println(digitsInBracket);
+//        String englishPlaceValue = valueOfNumberInEnglish(digitsInBracket).trim();
+//        return englishPlaceValue.trim();
+//    }
 
     private String valueOfNumberInEnglish(Map<Integer, String> digitsInBracket) {
         StringBuilder accumulator = new StringBuilder();
@@ -158,18 +151,14 @@ public EnglishInteger() {
         return accumulator.toString();
     }
 
-
-
     private Map<Integer, String> populateBracketMap(String value, int iteration) {
-
-
         if (value.equals("")) {
             return digitsInBracket;
         } else if(value.length() < 3) {
             digitsInBracket.put(iteration, value);
         }
         else {
-            String bracket = value.substring(value.length() - 3, value.length());
+            String bracket = value.substring(value.length() - 3);
 
             value = value.substring(0, value.length() - 3);
 
@@ -180,9 +169,5 @@ public EnglishInteger() {
         }
 
         return digitsInBracket;
-
     }
-
-
-
 }
