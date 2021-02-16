@@ -575,6 +575,7 @@ public class Practice {
     public static int findKthLargest(int[] nums, int k) {
         PriorityQueue<Integer> pq = new PriorityQueue<>();
         for (int elem : nums) {
+
             if (!pq.contains(elem)) {
                 if (pq.size() < k)
                     pq.add(elem);

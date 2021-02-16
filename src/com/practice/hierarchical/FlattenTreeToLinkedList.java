@@ -3,7 +3,7 @@ package hierarchical;
 import java.util.LinkedList;
 
 
-    /* https://leetcode.com/problems/flatten-binary-tree-to-linked-list/ */
+    /* https://leetcode.com/problems/flatten-binary- tree-to-linked-list/ */
 
 public class FlattenTreeToLinkedList {
 
