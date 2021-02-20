@@ -1,4 +1,6 @@
-package linear;
+package sorts;
+
+import linear.Practice;
 
 public class SelectionSort {
     private static int[] selectionSort(int [] args) {

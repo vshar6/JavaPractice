@@ -1,5 +1,7 @@
 package linear;
 
+import sorts.MergeSort;
+
 import java.util.*;
 import java.util.stream.Collectors;
 

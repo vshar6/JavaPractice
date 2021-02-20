@@ -1,4 +1,4 @@
-package linear;
+package sorts;
 
 import java.util.Arrays;
 

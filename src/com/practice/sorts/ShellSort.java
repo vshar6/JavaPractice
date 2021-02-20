@@ -1,4 +1,6 @@
-package linear;
+package sorts;
+
+import linear.Practice;
 
 public class ShellSort {
 

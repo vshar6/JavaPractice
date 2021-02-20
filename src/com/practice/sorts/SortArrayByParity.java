@@ -1,4 +1,6 @@
-package linear;
+package sorts;
+
+import linear.Practice;
 
 /*
  *  https://leetcode.com/problems/sort-array-by-parity/
@@ -17,7 +19,7 @@ public class SortArrayByParity {
                 k--;
             }
         }
-        Practice.printArray(helperArray);
+        //Practice.printArray(helperArray);
         return helperArray;
     }
 

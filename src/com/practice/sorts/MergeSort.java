@@ -1,4 +1,6 @@
-package linear;
+package sorts;
+
+import linear.Practice;
 
 public class MergeSort {
     public static void mergeSort(int[] array) {
