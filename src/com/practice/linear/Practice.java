@@ -273,7 +273,11 @@ public class Practice {
 
     protected static void printArray(int[] args) {
         for (int i = 0; i < args.length; i++) {
-            System.out.print(args[i] + ",");
+            if(i==args.length-1) {
+                System.out.print(args[i]);
+            } else {
+                System.out.print(args[i] + ",");
+            }
         }
     }
 

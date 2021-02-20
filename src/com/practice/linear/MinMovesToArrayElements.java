@@ -3,7 +3,8 @@ package linear;
 import java.util.Arrays;
 
 /*
-*
+* https://leetcode.com/problems/minimum-moves-to-equal-array-elements/ - minMoves
+* https://leetcode.com/problems/minimum-moves-to-equal-array-elements-ii/ - minMoves2
 * */
 public class MinMovesToArrayElements {
 

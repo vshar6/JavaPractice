@@ -1,6 +1,7 @@
-package linear;/*
-https://leetcode.com/problems/maximum-product-subarray/
+package linear;
 
+/*
+https://leetcode.com/problems/maximum-product-subarray/
 https://leetcode.com/problems/subarray-product-less-than-k/
 */
 
