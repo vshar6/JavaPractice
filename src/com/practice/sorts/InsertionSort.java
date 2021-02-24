@@ -16,7 +16,7 @@ public class InsertionSort {
             }
             args[i+1] = key;
         }
-        Practice.printArray(args);
+        //Practice.printArray(args);
         return args;
     }
 }

@@ -11,12 +11,32 @@ public class SubSets {
         //array.SubSets soa= new array.SubSets();
         int[] nums= {1, 2, 3};
         //System.out.println(powerSet(new HashSet<>(){{add(1);add(2);add(3);}}));
-       List<List<Integer>> subsets = subsets(nums);
-//
-//        for (List<Integer> subset: subsets) {
-//            System.out.println(subset);
-//        }
+        List<List<Integer>> subsets = subsets(nums);
+
+        for (List<Integer> subset: subsets) {
+            System.out.println(subset);
+        }
     }
+
+    public static List<List<Integer>> subSetBuilder(List<Integer> nums, int index) {
+        List<List<Integer>> list = new ArrayList<>();
+        if(nums.size() == 0) {
+            list.add(new ArrayList<Integer>());
+        } else {
+            subSetBuilder(nums, index+1);
+            int item = nums.get(index);
+            List<List<Integer>> additionalList = new ArrayList<>();
+            for(List<Integer> subsets : list) {
+                ArrayList<Integer> newSubSet = new ArrayList<>();
+                newSubSet.addAll(subsets);
+                newSubSet.add(item);
+                additionalList.add(newSubSet);
+            }
+            additionalList.addAll(list);
+        }
+        return list;
+    }
+
 
     public static List<List<Integer>> subsets(int[] nums) {
         List<List<Integer>> list = new ArrayList<>();
@@ -32,7 +52,7 @@ public class SubSets {
             // Explore
             subsetsHelper(subsets, currentSubset, nums, i + 1);
             // remove
-            currentSubset .remove(currentSubset.size() - 1);
+            currentSubset.remove(currentSubset.size() - 1);
         }
     }
 

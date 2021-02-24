@@ -138,8 +138,6 @@ class Interval {
         this.upperDigitCount = upperDigitCount;
     }
 
-
-
     public double getUpperBoundNumber() {
         return upperBoundNumber;
     }

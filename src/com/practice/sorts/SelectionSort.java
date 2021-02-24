@@ -16,9 +16,9 @@ public class SelectionSort {
             }
             //System.out.println("Smallest:"+smallest);
             System.out.println("Index of smallest:" + indexOfSmallest);
-            Practice.swapElements(args, i, indexOfSmallest);
+            //Practice.swapElements(args, i, indexOfSmallest);
 
-            Practice.printArray(args);
+            //Practice.printArray(args);
 
         }
         return args;
