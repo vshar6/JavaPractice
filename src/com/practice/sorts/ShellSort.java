@@ -23,7 +23,7 @@ public class ShellSort {
             // reduce interval
             interval = (interval - 1)/3;
         }
-        //Practice.printArray(arr);
+        Practice.printArray(arr);
         return arr;
     }
 

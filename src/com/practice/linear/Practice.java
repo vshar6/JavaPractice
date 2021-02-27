@@ -273,7 +273,7 @@ public class Practice {
         return a;
     }
 
-    protected static void printArray(int[] args) {
+    public static void printArray(int[] args) {
         for (int i = 0; i < args.length; i++) {
             if(i==args.length-1) {
                 System.out.print(args[i]);
@@ -284,7 +284,7 @@ public class Practice {
     }
 
 
-    protected static void swapElements(int[] array, int i, int j) {
+    public static void swapElements(int[] array, int i, int j) {
         int temp = array[i];
         array[i] = array[j];
         array[j] = temp;

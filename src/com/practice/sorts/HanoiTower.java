@@ -17,14 +17,14 @@ public class HanoiTower {
         t.add(disc);
     }
 
-    public void moveDisks(int n, HanoiTower destination, HanoiTower buffer) {
+    public void moveDisks(int n, HanoiTower buffer, HanoiTower destination) {
         moveDisks(n-1,buffer,destination);
         moveTop(destination);
         moveDisks(n-1, destination, this );
     }
 
     public void add(int d) {
-        if(!disks.isEmpty() && disks.peek()<-d) {
+        if(!disks.isEmpty() && disks.peek()< -d) {
             System.out.println("Error in placing disk:"+d);
         } else {
             disks.push(d);

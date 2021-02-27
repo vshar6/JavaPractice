@@ -52,6 +52,6 @@ public class MergeSort {
             }
         }
 
-        //Practice.printArray(array);
+        Practice.printArray(array);
     }
 }
