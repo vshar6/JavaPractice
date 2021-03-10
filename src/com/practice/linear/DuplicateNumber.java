@@ -21,11 +21,6 @@ public class DuplicateNumber {
 
 
     // https://leetcode.com/problems/single-number/
-    public static void main(String [] args) {
-        int [] array = {1,3,4,4,2};
-        new DuplicateNumber().findDuplicate(array);
-    }
-
     public int singleNumber(int[] nums) {
         int a = 0;
         for (int i : nums) {
@@ -33,5 +28,13 @@ public class DuplicateNumber {
         }
         return a;
     }
+
+
+    public static void main(String [] args) {
+        int [] array = {1,3,4,4,2};
+        new DuplicateNumber().findDuplicate(array);
+    }
+
+
 
 }
