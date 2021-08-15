@@ -18,9 +18,11 @@ public class FirstMissingPositive {
                 if (nums[index] <= first_missing_positive && !uniqueNumbers.contains(nums[index])) {
                     first_missing_positive = first_missing_positive +1;
                 }
+
                 uniqueNumbers.add(nums[index]);
             }
         }
+        System.out.println("apple".compareTo("banana"));
         System.out.println("first_missing_positive:" + first_missing_positive);
         return isallNegative?1:first_missing_positive;
     }
@@ -50,7 +52,8 @@ public class FirstMissingPositive {
 
     public static void main(String [] args) {
         int [] array = {};
-        new FirstMissingPositive().firstMissingPositive(array);
+        System.out.println("apple".compareTo("banana"));
+        //new FirstMissingPositive().firstMissingPositive(array);
     }
 
     /*

@@ -9,11 +9,9 @@ public class GraphTraversals {
         Queue<Node> queue = new PriorityQueue<>();
 
         queue.add(root);
-
+        root.setNodeState(State.VISITED);
         while (!queue.isEmpty()) {
             Node temp = queue.peek();
-            root.setNodeState(State.VISITED);
-
             for(Node n : temp.children) {
                 if(!n.getNodeState().equals(State.VISITED)) {
                     n.setNodeState(State.VISITED);
