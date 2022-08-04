@@ -7,15 +7,8 @@ import java.util.List;
 /*
 * Input = 1102021222
 * k = 2
-* Output = 5
-* Explanation = [11,02,02,0202,22,22]
-*
-*
-*
-*
-*
-*
-*
+* Output = 4
+* Explanation = [11,0202,22,22]
 * */
 public class PerfectString {
 
@@ -31,7 +24,7 @@ public class PerfectString {
         return count;
     }
 
-    //Create chunks of 'k' sizes
+    //Create chunks of 'k' sizes and check if they are identical
 
     private static int identicalChunks(List<String> substrings, int k) {
         int count = 0;
@@ -40,9 +33,8 @@ public class PerfectString {
             if(value.length() == 2 &&  value.charAt(0)!=value.charAt(1)) {
                 isChunkIdentical = false;
             } else {
-                List<String> chunks = new ArrayList<>();
+                //List<String> chunks = new ArrayList<>();
                 String localChunk = "";
-
                 for (int i = 0; i < value.length(); i += k) {
                     String currentChunk = value.substring(i, Math.min(value.length(), i + k));
                      if(!localChunk.equals("") && !localChunk.equals(currentChunk)) {
@@ -52,14 +44,12 @@ public class PerfectString {
                         localChunk = currentChunk;
                     }
                 }
-
             }
             if(isChunkIdentical) {
                 System.out.println("perfect String:"+value);
                 count ++;
             }
         }
-
         return count;
     }
 
@@ -76,13 +66,12 @@ public class PerfectString {
             }
 
         }
-
         System.out.println(substrings);
         return substrings;
     }
 
 
     public static void main(String[] args) {
-        perfectStrings("1102021212",2);
+        perfectStrings("aabcbcababbb",2);
     }
 }
