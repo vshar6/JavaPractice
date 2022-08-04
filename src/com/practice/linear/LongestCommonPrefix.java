@@ -18,17 +18,16 @@ package linear;
 * */
 
 public class LongestCommonPrefix {
-    public static String longestCommonPrefix(String[] strs) {
+    public static void longestCommonPrefix(String[] strs) {
         //int [] sizeofStrs = new int[strs.length];
         String idealPrefix = getSmallestWord(strs);
 
         //String longestCommonPrefix = getCommonPrefix(strs,idealPrefix);
         //System.out.println("longestCommonPrefix:"+longestCommonPrefix);
-        return getCommonPrefix(strs,idealPrefix);
+        getCommonPrefix(strs,idealPrefix);
     }
 
     private static String getCommonPrefix(String[] strs, String idealPrefix) {
-        String longestCommonPrefix;
         int counter = 0;
         for(String str:strs) {
 
@@ -46,9 +45,9 @@ public class LongestCommonPrefix {
         if (idealPrefix.length() <= 0) {
             return "";
         }  else {
-            longestCommonPrefix = getCommonPrefix(strs, idealPrefix);
+            return getCommonPrefix(strs, idealPrefix);
         }
-        return longestCommonPrefix;
+
     }
 
     private static String getSmallestWord(String[] strs) {
