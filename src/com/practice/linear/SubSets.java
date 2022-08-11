@@ -1,6 +1,8 @@
 package linear;
 
 import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 
 // https://leetcode.com/problems/subsets/
@@ -10,15 +12,16 @@ public class SubSets {
 
         //array.SubSets soa= new array.SubSets();
         int[] nums= {1, 2, 3};
+
         List<Integer> elements = new ArrayList<>(){{add(1);add(2);add(3);}};
         //System.out.println(powerSet(new HashSet<>(){{add(1);add(2);add(3);}}));
         //List<List<Integer>> subsets = subsets(nums);
         List<List<Integer>> subsets = subSetBuilder(elements,0);
 
         System.out.println("--"+subsets);
-        for (List<Integer> subset: subsets) {
-            System.out.println(subset);
-        }
+//        for (List<Integer> subset: subsets) {
+//            System.out.println(subset);
+//        }
     }
 
     public static List<List<Integer>> subSetBuilder(List<Integer> nums, int index) {
@@ -41,13 +44,13 @@ public class SubSets {
     }
 
 
-    public static List<List<Integer>> subsets(int[] nums) {
-        List<List<Integer>> list = new ArrayList<>();
-        subsetsHelper(list, new ArrayList<>(), nums, 0);
-        return list;
-    }
+//    public static List<List<Integer>> subsets(int[] nums) {
+//        List<List<Integer>> list = new ArrayList<>();
+//        subsetsHelper(list, new ArrayList<>(), nums, 0);
+//        return list;
+//    }
 
-    private static void subsetsHelper(List<List<Integer>> subsets , List<Integer> currentSubset, int [] nums, int start){
+    /*private static void subsetsHelper(List<List<Integer>> subsets , List<Integer> currentSubset, int [] nums, int start){
         subsets.add(new ArrayList<>(currentSubset));
         for(int i = start; i < nums.length; i++){
             // add element
@@ -57,7 +60,7 @@ public class SubSets {
             // remove
             currentSubset.remove(currentSubset.size() - 1);
         }
-    }
+    }*/
 
     /*public static Set<Set<Integer>> powerSet(Set<Integer> originalSet) {
         Set<Set<Integer>> sets = new HashSet<Set<Integer>>();
