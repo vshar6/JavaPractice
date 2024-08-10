@@ -13,20 +13,6 @@ import java.util.Arrays;
 
 public class PrefixSuffixMultiplication {
 
-
-    public int doMultiplication(int [] array) {
-        int mulitplication = 0;
-        if(array.length > 0) {
-            for(int i= 0;i<array.length;i++) {
-                mulitplication = mulitplication * array[i];
-            }
-        } else {
-            return 0;
-        }
-
-       return mulitplication;
-    }
-
     public static int [] getOutputArray(int [] input) {
         int result = 0;
         int [] output = new int [input.length];
