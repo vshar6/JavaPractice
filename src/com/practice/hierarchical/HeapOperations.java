@@ -1,6 +1,6 @@
 package hierarchical;
 
-public class HeapOperations {
+public class  HeapOperations {
 
     private void heapify(int [] array, int size, int index) {
         int largest = index;

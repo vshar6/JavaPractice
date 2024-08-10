@@ -8,11 +8,12 @@ public class RouteBetweenTwoNodes {
 
     private boolean search(Graph graph, Node start, Node end) {
 
+        //Traverse the graph and set every node as unvisited
         for(Node node : graph.getNodes()) {
             node.setNodeState(State.UNVISITED);
         }
 
-        start.setNodeState(State.VISITNG);
+        start.setNodeState(State.VISITING);
         nodes.add(start);
         Node u;
         while(!nodes.isEmpty()) {
@@ -24,13 +25,14 @@ public class RouteBetweenTwoNodes {
                         if(adjacent == end) {
                             return true;
                         } else {
-                            adjacent.setNodeState(State.VISITNG);
+                            adjacent.setNodeState(State.VISITING);
                         }
                     }
                 }
                 u.setNodeState(State.VISITED);
             }
         }
+
         return false;
     }
 

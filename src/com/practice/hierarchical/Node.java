@@ -5,7 +5,7 @@ public class Node {
     public String name;
     public Node[] children;
 
-    public State nodeState;
+    public State nodeState = State.UNVISITED;
 
     public Node[] getChildren() {
         return children;
@@ -35,5 +35,5 @@ public class Node {
  enum State {
     UNVISITED,
     VISITED,
-    VISITNG;
+    VISITING;
 }
