@@ -30,7 +30,7 @@ public class PrefixSuffixMultiplication {
 
 
     public static void main(String [] args) {
-        int [] array = {1, 2, 3, 2, 0};
+        int [] array = {1, 2, 3, -2, 3};
         getOutputArray(array);
     }
 }
