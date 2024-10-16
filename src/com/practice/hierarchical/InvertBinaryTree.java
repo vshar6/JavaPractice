@@ -16,10 +16,7 @@ public class InvertBinaryTree {
             invertTree(root.left);
         }
 
-
-
         return root;
-
     }
 
 }
