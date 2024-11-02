@@ -64,23 +64,23 @@ public class InvertedIndex {
             fileno = files.size() - 1;
         }
 
-        int pos = 0;
+        int position = 0;
         BufferedReader reader = new BufferedReader(new FileReader(file));
         for (String line = reader.readLine(); line != null; line = reader.readLine()) {        // read step for the line
             for (String _word : line.split("\\W+")) {                                   //tokenizing step for the line
                 String word = _word.toLowerCase();                                             // word to lower case
-                pos++;
+                position++;
                 if (stopwords.contains(word))
                     continue;
-                List<Tuple> idx = index.get(word);
-                if (idx == null) {
-                    idx = new LinkedList<Tuple>();
-                    index.put(word, idx);
+                List<Tuple> tuples = index.get(word);
+                if (tuples == null) {
+                    tuples = new LinkedList<Tuple>();
+                    index.put(word, tuples);
                 }
-                idx.add(new Tuple(fileno, pos));
+                tuples.add(new Tuple(fileno, position));
             }
         }
-        System.out.println("indexed " + file.getPath() + " " + pos + " words");
+        System.out.println("indexed " + file.getPath() + " " + position + " words");
     }
 
 //    public void searchs(List<String> words) {
@@ -104,9 +104,9 @@ public class InvertedIndex {
         for (String _word : words) {
             answer = new HashSet<String>();
             String word = _word.toLowerCase();
-            List<Tuple> idx = index.get(word);
-            if (idx != null) {
-                for (Tuple t : idx) {
+            List<Tuple> tuples = index.get(word);
+            if (tuples != null) {
+                for (Tuple t : tuples) {
                     answer.add(files.get(t.fileno));
                 }
             }
