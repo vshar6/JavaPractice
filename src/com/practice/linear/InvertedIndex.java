@@ -55,6 +55,38 @@ public class InvertedIndex {
     }*/
 
 
+//    *************************** Practice - please ignore ************************************
+//    public void indexFiles(final File file) throws IOException {
+//        int fileno = files.indexOf(file.getPath());
+//        if (fileno == -1) {
+//            files.add(file.getPath());
+//            fileno = files.size() - 1;
+//        }
+//
+//        int position = 0;
+//        BufferedReader reader = new BufferedReader(new FileReader(file));
+//        for(String line = reader.readLine(); line!= null; line = reader.readLine()) {
+//            String[] _words = line.split("\\W+");         //tokenization
+//            for(String _word: _words) {
+//                String word = _word.toLowerCase();              //normalization - step 1 (lower casing)
+//                position++;
+//
+//                if(stopwords.contains(word)) {
+//                    continue;
+//                } else {
+//                    Tuple tuple = new Tuple(fileno,position);
+//                    List<Tuple> tuples = index.get(word);
+//                   if(tuples==null) {
+//                       tuples = new LinkedList<>();
+//                       index.put(word, tuples);
+//                   }
+//                    tuples.add(tuple);
+//                }
+//            }
+//        }
+//    }
+//     ****************************************************************************************
+
 
 
     public void indexFile(File file) throws IOException {
@@ -82,6 +114,9 @@ public class InvertedIndex {
         }
         System.out.println("indexed " + file.getPath() + " " + position + " words");
     }
+
+
+
 
 //    public void searchs(List<String> words) {
 //
