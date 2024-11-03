@@ -37,14 +37,33 @@ public class Islands {
            if(elementRow < 0 || elementColumn < 0 || elementColumn>=matrix[1].length || elementRow>=matrix.length) {
                continue;
            }
-           if (matrix[elementRow][elementColumn] == 0 || visitedCells[elementRow][elementColumn])
-                continue; // continue if the cell is water or visited
+           else if (matrix[elementRow][elementColumn] == 0 || visitedCells[elementRow][elementColumn]) {
+               continue; // continue if the cell is water or visited
+           }
+
            visitedCells[elementRow][elementColumn] = true;
 
-           neighbours.add(new int[]{row,column+1});
-           neighbours.add(new int[]{row+1,column});
-           neighbours.add(new int[]{row-1,column});
-           neighbours.add(new int[]{row,column-1});
+//           neighbours.add(new int[]{row,column+1});
+//           neighbours.add(new int[]{row,column-1});
+//
+//           neighbours.add(new int[]{row+1,column});
+//           //neighbours.add(new int[]{row+1,column+1});
+//           neighbours.add(new int[]{row+1,column-1});
+//
+//           neighbours.add(new int[]{row-1,column});
+//           //neighbours.add(new int[]{row-1,column-1});
+//           neighbours.add(new int[]{row-1,column+1});
+            neighbours.add(new int[]{row-1,column});
+            neighbours.add(new int[]{row-1,column-1});
+            neighbours.add(new int[]{row-1,column+1});
+
+            neighbours.add(new int[]{row+1,column});
+            neighbours.add(new int[]{row+1,column+1});
+            neighbours.add(new int[]{row+1,column-1});
+
+            neighbours.add(new int[]{row,column+1});
+            neighbours.add(new int[]{row,column-1});
+
         }
     }
 
@@ -58,15 +77,25 @@ public class Islands {
         visitedCells[row][column] = true;
 
         depthFirst(matrix, row + 1, column, visitedCells);
+        depthFirst(matrix, row + 1, column - 1, visitedCells);
+        depthFirst(matrix, row + 1, column + 1, visitedCells);
+
+        depthFirst(matrix, row, column - 1, visitedCells);
+        depthFirst(matrix, row, column + 1, visitedCells);
+
+
         depthFirst(matrix, row - 1, column, visitedCells);
         depthFirst(matrix, row - 1, column + 1, visitedCells);
-        depthFirst(matrix, row, column - 1, visitedCells);
+        depthFirst(matrix, row - 1, column - 1, visitedCells);
+
     }
 
     public static void main(String [] args) {
         int[][] matrix = {
-                {1,1,0,0,0},
-                {0,1,0,0,1}
+                {0,1,1,0,0},
+                {1,0,0,1,0},
+                {0,0,1,0,0},
+                {1,0,0,0,1}
         };
 
         Islands island = new Islands();
