@@ -38,9 +38,8 @@ public class SimplifyPath {
             if (x.equals(".")) {
             } else {
                 if (x.equals("..")) {
-                    if (directories.size() == 0) {
-                        //return output.toString();
-                    } else {
+                    if (!directories.isEmpty()) {
+
                         directories.remove(directories.size() - 1);
                     }
                 } else {

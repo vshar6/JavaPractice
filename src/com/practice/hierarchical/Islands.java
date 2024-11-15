@@ -84,7 +84,7 @@ public class Islands {
            int elementRow = neighbours.peek()[0];
            int elementColumn = neighbours.peek()[1];
            neighbours.remove();
-           if(elementRow < 0 || elementColumn < 0 || elementColumn>=matrix[1].length || elementRow>=matrix.length) {
+           if(elementRow < 0 || elementColumn < 0 || elementColumn>=matrix[0].length || elementRow>=matrix.length) {
                continue;
            }
            else if (matrix[elementRow][elementColumn] == 0 || visitedCells[elementRow][elementColumn]) {

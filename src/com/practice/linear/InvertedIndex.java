@@ -27,7 +27,8 @@ public class InvertedIndex {
     List<String> files = new ArrayList<String>();
 
 
-    /*public void indexFiles(File file) throws IOException {
+    /*
+    public void indexFiles(File file) throws IOException {
         int fileno = files.indexOf(file.getPath());
         if (fileno == -1) {
             files.add(file.getPath());
@@ -86,6 +87,7 @@ public class InvertedIndex {
 //        }
 //    }
 //     ****************************************************************************************
+
 
 
 
