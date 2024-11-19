@@ -56,11 +56,11 @@ public class ReverseInteger {
             return 0;
         }
 
-//        if(isNegative) {
-//            answer = answer*-1;
-//        }
+        if(isNegative) {
+            answer = answer*-1;
+        }
 
-        return isNegative?-1*answer:answer;
+        return answer;
     }
 
     public static void main(String [] args) {
