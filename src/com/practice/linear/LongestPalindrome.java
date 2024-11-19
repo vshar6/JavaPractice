@@ -57,19 +57,16 @@ public class LongestPalindrome {
 //         char[] _reverse = new char[length];
 //         int counter =0;
 //         char [] _letters = word.toCharArray();
-
 //         while(length!=0) {
 //             length--;
 //             _reverse[length] = _letters[counter];
 //             counter++;
 //         }
-
 //         String reverse = new String(_reverse);
-// //        if(reverse.equals(word)) {
-// //            System.out.println("Possible palindrome:"+reverse);
-// //        }
-
-    //         return reverse.equals(word);
+//         if(reverse.equals(word)) {
+//             System.out.println("Possible palindrome:"+reverse);
+//         }
+//         return reverse.equals(word);
 //     }
     private static boolean isPalindrome(String str)
     {
@@ -89,7 +86,13 @@ public class LongestPalindrome {
         long startTime = System.currentTimeMillis();
         Runtime rt = Runtime.getRuntime();
         long total_mem = rt.totalMemory();
-        String input = "jglknendplocymmvwtoxvebkekzfdhykknufqdkntnqvgfbahsljkobhbxkvyictzkqjqydczuxjkgecdyhixdttxfqmgksrkyvopwprsgoszftuhawflzjyuyrujrxluhzjvbflxgcovilthvuihzttzithnsqbdxtafxrfrblulsakrahulwthhbjcslceewxfxtavljpimaqqlcbrdgtgjryjytgxljxtravwdlnrrauxplempnbfeusgtqzjtzshwieutxdytlrrqvyemlyzolhbkzhyfyttevqnfvmpqjngcnazmaagwihxrhmcibyfkccyrqwnzlzqeuenhwlzhbxqxerfifzncimwqsfatudjihtumrtjtggzleovihifxufvwqeimbxvzlxwcsknksogsbwwdlwulnetdysvsfkonggeedtshxqkgbhoscjgpiel";
+        String input = "jglknendplocymmvwtoxvebkekzfdhykknufqdkntnqvgfbahsljkobhbxkvyictzkqj" +
+                "qydczuxjkgecdyhixdttxfqmgksrkyvopwprsgoszftuhawflzjyuyrujrxluhzjvbflxgcovilt" +
+                "hvuihzttzithnsqbdxtafxrfrblulsakrahulwthhbjcslceewxfxtavljpimaqqlcbrdgtgjryjy" +
+                "tgxljxtravwdlnrrauxplempnbfeusgtqzjtzshwieutxdytlrrqvyemlyzolhbkzhyfyttevqnfv" +
+                "mpqjngcnazmaagwihxrhmcibyfkccyrqwnzlzqeuenhwlzhbxqxerfifzncimwqsfatudjihtumrtj" +
+                "tggzleovihifxufvwqeimbxvzlxwcsknksogsbwwdlwulnetdysvsfkonggeedtshxqkgbhoscjgpiel";
+
         //System.out.println("answer="+longestPalindrome("kqwertytrewq"));
         System.out.println("longestPalindrome:"+longestPalindrome(input));
         System.out.println("elapsetime="+( System.currentTimeMillis()-startTime));
