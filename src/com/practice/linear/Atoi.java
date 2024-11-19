@@ -10,16 +10,12 @@ Rounding: If the integer is out of the 32-bit signed integer range [-231, 231 - 
  */
 
 package linear;
-
+import java.math.BigInteger;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
+
 
 public class Atoi {
-
-
 
     // Read the string and check for the conditions.
     /*
@@ -27,7 +23,7 @@ public class Atoi {
         2. check each character of the string if it is a digit or not
      */
 
-    public static boolean checkIfPossibleNegative(String s) {
+    /*public static boolean checkIfPossibleNegative(String s) {
         if(s.charAt(0) == '-') {
             return true;
         }
@@ -84,12 +80,104 @@ public class Atoi {
         } else {
             return 99;
         }
+    }*/
+
+
+        public static int myAtoi(String s) {
+            char[] letters = s.trim().toCharArray();
+
+            if(letters == null) {
+                return 0;
+            }
+
+            List<Character> numbers = new ArrayList<>();
+            int initIndex = 0;
+            boolean isNegative = false;
+            if (letters.length == 0) {
+                return 0;
+            }
+            if (letters[0] == '-') {
+                isNegative = true;
+                initIndex = 1;
+            } else if (letters[0] == '+') {
+                initIndex = 1;
+            }
+            for (int index = initIndex; index < letters.length; index++) {
+                if (checkIfInteger(letters[index])) {
+                    numbers.add(letters[index]);
+                } else {
+                    break;
+                }
+            }
+
+            return createNumber(isNegative, numbers);
+        }
+
+//    private static char[] processWord(String s) {
+//            String [] arr = s.split(" ");
+//            StringBuilder sb = new StringBuilder();
+//            for(String str: arr) {
+//                if
+//                sb.append(arr.toString());
+//            }
+//            char [] _letters = sb.toString().toCharArray();
+//            //List<Character> letters = new ArrayList<>();
+//
+////            for(Character letter: _letters) {
+////                if(letter != ' ') {
+////                    letters.add(letter);
+////                } else {
+////                    if(letters.size() > 0 ) {
+////                        return null;
+////                    }
+////                }
+////
+////            }
+//
+//            return _letters;
+//    }
+
+    private static int createNumber(boolean isNegative, List<Character> numbers) {
+            Integer answer = 0;
+            StringBuilder number = new StringBuilder();
+            if (numbers.isEmpty()) {
+                return 0;
+            }
+            for (Character character : numbers) {
+                number.append(character);
+            }
+            try {
+                if (isNegative) {
+                    answer = -1 * Integer.parseInt(number.toString());
+                } else {
+                    answer = Integer.parseInt(number.toString());
+                }
+            } catch (NumberFormatException ex) {
+                if (isNegative) {
+                    return Integer.MIN_VALUE;
+                } else {
+                    return Integer.MAX_VALUE;
+                }
+            }
+
+            return answer;
+        }
+
+        private static boolean checkIfInteger(Character character) {
+
+            if (48 <= character && character <= 57) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        public static void main(String [] args) {
+
+        System.out.println("answer="+myAtoi("  4193 with words"));
+
+        //System.out.println(Integer.parseInt( "-123243434542"));
+
     }
-
-    public static void main(String [] args) {
-
-        myAtoi("-aa1234");
-    }
-
 
 }

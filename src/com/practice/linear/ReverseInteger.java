@@ -65,6 +65,6 @@ public class ReverseInteger {
 
     public static void main(String [] args) {
 
-        System.out.println("output="+reverse(-120));
+        System.out.println("output="+reverse(-1209));
     }
 }
