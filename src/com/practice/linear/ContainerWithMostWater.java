@@ -32,7 +32,7 @@ public class ContainerWithMostWater {
             int length = 0;
             while(length < height.length) {
                 if(length!=index) {
-                    int effectiveHeight = height[index] > height[length]?height[length]:height[index];
+                    int effectiveHeight = Math.min(height[index], height[length]);
                     int effectiveLength = Math.abs(length-index);
                     int tempArea = effectiveHeight * effectiveLength;
                     //System.out.println("effectiveHeight for height["+index+"]:"+height[index]+" and height["+length+"]"+height[length]+", distance:"+effectiveLength+" is:"+effectiveHeight+". Area:"+tempArea);
@@ -49,9 +49,30 @@ public class ContainerWithMostWater {
         return maxArea;
     }
 
+
+    public static int maxAreas(int[] height) {
+
+        int n = height.length;
+        int left = 0;
+        int area = 0;
+        int right = n - 1;
+
+        while (left < right) {
+            // Calculating the max area
+            area = Math.max(area, Math.min(height[left],
+                    height[right]) * (right - left));
+
+            if (height[left] < height[right])
+                left += 1;
+            else
+                right -= 1;
+        }
+        return area;
+    }
+
     public static void main(String [] args) {
-        //int[] height = {1,8,6,2,5,4,8,3,7};
-        int[] height = {1,1};
+        int[] height = {1,8,6,2,5,4,8,3,7};
+        //int[] height = {1,1};
         maxArea(height);
     }
 }
