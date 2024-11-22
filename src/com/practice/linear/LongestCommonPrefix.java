@@ -19,12 +19,8 @@ package linear;
 
 public class LongestCommonPrefix {
     public static void longestCommonPrefix(String[] strs) {
-        //int [] sizeofStrs = new int[strs.length];
-        String idealPrefix = getSmallestWord(strs);
-
-        //String longestCommonPrefix = getCommonPrefix(strs,idealPrefix);
-        //System.out.println("longestCommonPrefix:"+longestCommonPrefix);
-        getCommonPrefix(strs,idealPrefix);
+        String idealPrefix = getSmallestWord(strs);             //fetch the smallest word, this word can be the ideal prefix, to start with.
+        System.out.println(getCommonPrefix(strs,idealPrefix));
     }
 
     private static String getCommonPrefix(String[] strs, String idealPrefix) {
@@ -53,14 +49,12 @@ public class LongestCommonPrefix {
     private static String getSmallestWord(String[] strs) {
         int smallestIndex = 0;
         int smallestLength = strs[smallestIndex].length();
-        for(int index = 1; index< strs.length; index++) {
+        for(int index = 1; index < strs.length; index++) {
             if(smallestLength > strs[index].length()) {
                 smallestLength = strs[index].length();
                 smallestIndex = index;
             }
         }
-        //System.out.println("smallestIndex:"+smallestIndex);
-        //System.out.println("smallestWord:"+strs[smallestIndex]);
 
         return strs[smallestIndex];
     }

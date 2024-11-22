@@ -49,7 +49,7 @@ public class ContainerWithMostWater {
         return maxArea;
     }
 
-
+    // Optimized solution
     public static int maxAreas(int[] height) {
 
         int n = height.length;
