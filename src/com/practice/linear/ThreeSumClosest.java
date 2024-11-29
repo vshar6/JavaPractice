@@ -58,21 +58,6 @@ public class ThreeSumClosest {
     }
 
 
-    public static void printArray(Integer [] array) {
-        for(Integer element: array) {
-            System.out.println("element:"+element);
-        }
-    }
-
-    private static List<Integer> createList(int[] nums) {
-        List<Integer> inputNumbers = new ArrayList<>();
-        for(Integer num: nums) {
-            inputNumbers.add(num);
-        }
-
-        return inputNumbers;
-    }
-
     public static void main(String [] args) {
         //int[] nums = {-100,-98,-2,-1};
         //int[] nums = {1,3,4,7,8,9};
