@@ -33,22 +33,23 @@ Example 1:
 package linear;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 public class ThreeSum {
     public static List<List<Integer>> threeSum(int[] nums) {
 
-        //int leftCounter = 0;
-        ;
         List<Integer> inputNumbers = createList(nums);
         List<List<Integer>> threeSums = new ArrayList<>();
         for(int leftCounter = 0;leftCounter < (nums.length-1); leftCounter++) {
             int rightCounter = nums.length-1;
-            while(rightCounter >= 0) {
+            while(leftCounter <rightCounter) {
                 if(leftCounter != rightCounter) {
                     List<Integer> threeSum = new ArrayList<>();
-                    int targetSum = -1*(nums[leftCounter] + nums[rightCounter]);;
+                    int targetSum = -1*(nums[leftCounter] + nums[rightCounter]);
+//                    int num = Arrays.binarySearch(inputNumbers.toArray(),leftCounter+1,nums.length-1, targetSum);
+//                    System.out.println("first:"+nums[leftCounter]+",second:"+nums[rightCounter]+",third:"+num);
                     if(inputNumbers.contains(targetSum) ) {
                         int indexOfThirdNumber = inputNumbers.indexOf(targetSum);
                         if(indexOfThirdNumber != leftCounter && indexOfThirdNumber != rightCounter) {
@@ -72,7 +73,6 @@ public class ThreeSum {
     private static boolean identicalLists(List<List<Integer>> parentCollection, List<Integer> secondList) {
         for(List<Integer> list:parentCollection) {
             Collections.sort(secondList);
-            //Collections.sort(list);
             if(list.equals(secondList)) {
                 return true;
             }
@@ -80,6 +80,66 @@ public class ThreeSum {
 
         return false;
     }
+
+//    public static List<List<Integer>> threeSumOptimized(int[] nums) {
+//
+//        List<Integer> inputNumbers = createList(nums);
+//        List<List<Integer>> threeSums = new ArrayList<>();
+//        for(int leftCounter = 0;leftCounter < (nums.length-1); leftCounter++) {
+//            int rightCounter = nums.length-1;
+//            while(leftCounter <rightCounter) {
+//                if(leftCounter != rightCounter) {
+//                    Integer [] threeSumArr = new Integer[3];
+//
+//                    int targetSum = -1*(nums[leftCounter] + nums[rightCounter]);
+//
+//
+//                    int indexOfThirdNumber = searchTargetSumIndex(leftCounter,rightCounter,targetSum, nums);
+//                    if(indexOfThirdNumber!=-1) {
+//                        threeSumArr[0] = nums[leftCounter];
+//                        threeSumArr[1] = nums[rightCounter];
+//                        threeSumArr[2] = nums[indexOfThirdNumber];
+//                        Arrays.sort(threeSumArr);
+//                        if(threeSums.size()==0) {
+//                            threeSums.add(Arrays.asList(threeSumArr));
+//                        }
+//                        else if (!identicalLists(threeSums,Arrays.asList(threeSumArr))) {
+//                            threeSums.add(Arrays.asList(threeSumArr));
+//                        } else {
+//                            System.out.println("--------------");
+//                        }
+//                    }
+//                }
+//                rightCounter--;
+//            }
+//        }
+//        return threeSums;
+//    }
+
+//    private static int searchTargetSumIndex(int leftCounter, int rightCounter, int targetSum, int[] nums) {
+//
+//        for(int indexOfThirdNumber=0;indexOfThirdNumber < nums.length;indexOfThirdNumber++) {
+//            if(nums[indexOfThirdNumber] == targetSum) {
+//                if(indexOfThirdNumber != leftCounter && indexOfThirdNumber != rightCounter) {
+//                    return indexOfThirdNumber;
+//                }
+//            }
+//        }
+//
+//        return -1;
+//    }
+
+
+//    private static boolean identicalLists(List<List<Integer>> parentCollection, List<Integer> secondList) {
+//        for(List<Integer> list:parentCollection) {
+//            Collections.sort(secondList);
+//            if(list.equals(secondList)) {
+//                return true;
+//            }
+//        }
+//
+//        return false;
+//    }
 
 
     private static List<Integer> createList(int[] nums) {
