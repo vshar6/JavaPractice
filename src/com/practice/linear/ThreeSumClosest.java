@@ -22,15 +22,11 @@ Example 2:
 
 package linear;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class ThreeSumClosest {
 
     public static int threeSumClosest(int[] nums, int target) {
-
-        Integer [] targetNumbers = new Integer[3];
         int sum = 0;
         int distance = Integer.MAX_VALUE;
         for(int leftCounter = 0;leftCounter < nums.length; leftCounter++) {
@@ -58,12 +54,45 @@ public class ThreeSumClosest {
     }
 
 
+
+    public static int threeSumClosestOptimize(int[] nums, int target) {
+
+        Arrays.sort(nums);
+        int distance = nums[0]+nums[1]+nums[2];
+        for(int index = 0;index < nums.length-2; index++) {
+            int rightCounter = nums.length - 1;
+            int leftCounter = index+1;
+            while(leftCounter < rightCounter) {
+                int tempSum = nums[index]+nums[leftCounter]+nums[rightCounter];
+                if(tempSum == target) {
+                    return tempSum;
+                }
+
+                if(Math.abs(tempSum-target) < Math.abs(distance - target)) {
+                    distance = tempSum;
+                }
+
+                if(tempSum < target) {
+                    leftCounter ++;
+                } else {
+                    rightCounter --;
+                }
+            }
+        }
+
+        return distance;
+    }
+
+
+
+
+
     public static void main(String [] args) {
         //int[] nums = {-100,-98,-2,-1};
         //int[] nums = {1,3,4,7,8,9};
         int[] nums = {2,3,8,9,10};
         int target = 16;
-        System.out.println("answer:"+threeSumClosest(nums,target));
+        System.out.println("answer:"+threeSumClosestOptimize(nums,target));
     }
 
 }
