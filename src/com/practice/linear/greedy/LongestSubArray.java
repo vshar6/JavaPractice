@@ -1,8 +1,7 @@
-package linear;
+package linear.greedy;
 
 //Given an array of integers, find the length of the longest subarray with sum ≤ K.
 
-import java.util.Map;
 import java.util.TreeMap;
 
 public class LongestSubArray {

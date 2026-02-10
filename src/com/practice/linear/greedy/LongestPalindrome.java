@@ -17,10 +17,7 @@ Example 2:
 * */
 
 
-package linear;
-
-import java.util.Timer;
-import java.util.TimerTask;
+package linear.greedy;
 
 public class LongestPalindrome {
 

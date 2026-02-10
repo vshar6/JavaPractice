@@ -1,4 +1,4 @@
-package linear;
+package linear.greedy;
 
 /*
 * https://leetcode.com/problems/longest-substring-without-repeating-characters/

@@ -1,4 +1,4 @@
-package linear;
+package linear.greedy;
 
 //Given a string, find the length of the longest substring with at most K distinct characters.
 
