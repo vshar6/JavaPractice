@@ -4,7 +4,7 @@ package linear.greedy;
 
 import java.util.TreeMap;
 
-public class LongestSubArray {
+public class LongestSubArraySum {
 
 
     public static int lengthOfLongestSubArray(int [] array, int k) {
@@ -50,7 +50,7 @@ public class LongestSubArray {
                  => prefixSum[i] - prefixSum[j] ≤ K;
                  => prefixSum[j] ≥ prefixSum[i] - K;
 
-          We need to find the earliest occuring smallest prefixSum (refixSum[j]), hence the TreeMap as it provides exactly the same thing ceilingKey(x)
+          We need to find the earliest occurring smallest prefixSum (refixSum[j]), hence the TreeMap as it provides exactly the same thing ceilingKey(x)
         */
         // Treemap<prefixSum, earliestIndex>
         TreeMap<Integer, Integer> map = new TreeMap<>();
@@ -78,8 +78,10 @@ public class LongestSubArray {
     public static void main(String[] args) {
         int[] array2 = {-4, 2, -5, 1, 2, 3, 6, -5, 1};
         int[] array = {4, 2, 5, 1, 2, 3, 6, 5, 1};
-        System.out.println("Length of largest subarray approach 1 (greedy algorithm, handles only positives): " + lengthOfMaxSumLongestSubArray(array, 2));
-        System.out.println("Length of largest subarray approach 2 (prefix sum and treemap, handles negatives): "+lengthOfLongestSubArray(array2, 2));
+        System.out.println("Length of largest subarray approach 1 (greedy algorithm, handles negatives and positives. Case positive:): " + lengthOfMaxSumLongestSubArray(array, 2));
+        //System.out.println("Length of largest subarray approach 1 (greedy algorithm, handlesnegatives and positives. Case negative:): " + lengthOfMaxSumLongestSubArray(array2, 2));
+
+        System.out.println("Length of largest subarray approach 2 (prefix sum and treemap, handles positives): "+lengthOfLongestSubArray(array, 2));
 
     }
 }

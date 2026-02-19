@@ -31,13 +31,13 @@ public class MaxMeetingsWithNoOverlap {
     }
 
     public static int getNonOverlappingMeets(List<Meeting> meetings) {
-        //Meetings need to be sorted by their end time, reason being - the earliest ending meetings would accomodate more meetings for the day
+        //Meetings need to be sorted by their end time, reason being - the earliest ending meetings would accommodate more meetings for the day
         meetings.sort(Comparator.comparing(meeting->meeting.end));
         int count = 0;
         int lastEnd = Integer.MIN_VALUE;
         for(Meeting meeting:meetings){
             //the invariant
-            if(meeting.end > lastEnd){
+            if(meeting.start >= lastEnd){
                 count++;
                 lastEnd = meeting.end;
             }
